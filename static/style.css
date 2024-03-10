@@ -1,0 +1,25 @@
+p, h1, h4 {
+    color: #555557;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-input {
+    border: solid 1px #c2c4c6;
+    font-size: 16px;
+    padding: 0.2em;
+}
+
+.submit-btn {
+    background: #498af2;
+    font-family: verdana;
+    font-size: 14px;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    cursor: pointer;
+    outline: none;
+    width: 90%;
+    height: 3em;
+}

